@@ -205,13 +205,14 @@ public class SliderTestLight : SliderBase
   {
     base.FixedUpdate();
     UpdateGraphics();
-		if (!outputDelayGate) {
+		SendMessageUpwards ("recieveSliderValue", GetSliderFraction ());
+		/**if (!outputDelayGate) {
 			if (GetSliderFraction() <= .5) {
 				StartCoroutine("lightOff");
 			} else {
 				StartCoroutine("lightOn");
 			}
-		}
+		}*/
   }
 
 	void Update() {
