@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using LMWidgets;
 
-public class SliderDemo : SliderBase 
+public class SliderTestLight : SliderBase 
 {
+	public bool outputDelayGate = false;
+
+
   // ASSUME: Active Bar is a transform-sibling of SliderDemo
   public GameObject activeBar = null;
   // ASSUME: topLayer, midLayer & botLayer are transform-children of SliderDemo
@@ -202,9 +205,35 @@ public class SliderDemo : SliderBase
   {
     base.FixedUpdate();
     UpdateGraphics();
+		if (!outputDelayGate) {
+			if (GetSliderFraction() <= .5) {
+				StartCoroutine("lightOff");
+			} else {
+				StartCoroutine("lightOn");
+			}
+		}
   }
+
 	void Update() {
-		Debug.Log (GetSliderFraction());
+		//Debug.Log (GetSliderFraction());
+	}
+
+	public IEnumerator lightOff() {
+		outputDelayGate = true;
+		string url = "http://localhost:8080/CMD?Light_FF_Office_Ceiling=OFF";
+		WWW www = new WWW (url);
+		//yield return www;
+		yield return new WaitForSeconds(2);
+		outputDelayGate = false;
+	}
+	
+	public IEnumerator lightOn() {
+		outputDelayGate = true;
+		string url = "http://localhost:8080/CMD?Light_FF_Office_Ceiling=ON";
+		WWW www = new WWW (url);
+		//yield return www;
+		yield return new WaitForSeconds(2);
+		outputDelayGate = false;
 	}
 
 }

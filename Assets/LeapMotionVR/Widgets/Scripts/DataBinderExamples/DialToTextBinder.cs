@@ -13,6 +13,7 @@ public class DialToTextBinder : DataBinderDial {
   }
   
   override public string GetCurrentData() {
-    return uiText.text;
+//    return uiText.text;
+		return "";
   }
 }

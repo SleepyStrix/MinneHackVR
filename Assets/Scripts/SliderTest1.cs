@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using LMWidgets;
 
-public class SliderDemo : SliderBase 
+public class SliderTest1 : SliderBase 
 {
   // ASSUME: Active Bar is a transform-sibling of SliderDemo
   public GameObject activeBar = null;
@@ -204,7 +204,7 @@ public class SliderDemo : SliderBase
     UpdateGraphics();
   }
 	void Update() {
-		Debug.Log (GetSliderFraction());
+		//Debug.Log (GetSliderFraction());
 	}
 
 }

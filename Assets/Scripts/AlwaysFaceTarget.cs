@@ -3,17 +3,18 @@ using System.Collections;
 
 public class AlwaysFaceTarget : MonoBehaviour {
 
-	public Transform target;
+	//public GameObject target;
+	public string targetName = "HeadMount";
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () {	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-		Vector3 newFaceTarg = new Vector3((180 - target.position.x), (180 - target.position.y), (180- target.position.z));
+		GameObject target = GameObject.Find (targetName);
+		Vector3 newFaceTarg = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
 		transform.LookAt (newFaceTarg);
 	}
 }

@@ -1,0 +1,7 @@
+https://home.nest.com/login/oauth2?client_id=f0e299ee-4bdf-4716-b119-9b769aa558e6&state=Indiana
+
+425DK56J
+
+https://api.home.nest.com/oauth2/access_token?client_id=f0e299ee-4bdf-4716-b119-9b769aa558e6&code=425DK56J&client_secret=pahMDU3N6FR4LFOB5sxlXX8GQ&grant_type=authorization_code
+
+c.VKXE25l2bhQBw3UNkO6quC4xLInCPKZQDpQdIngS3xMPt6Ku8f1gPb8AImgyl2PiIxQte9KhLoiSmmXSwGJAKgJ0jcE7FREozSOnzu40c3rwcPlPiTadVs9nMbT1aARz8dkbv1zfLSsIl5fm
